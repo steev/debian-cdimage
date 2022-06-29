@@ -7,6 +7,7 @@ hibmc-drm
 
 # For panel/backlight on some chromeos devices
 panel-simple
+panel-edp
 pwm_bl
 pwm-cros-ec
 
@@ -15,3 +16,6 @@ analogix-anx6345
 pwm-sun4i
 sun4i-drm
 sun8i-mixer
+
+# For panel/backlight on Pinebook Pro
+pwm-rockchip
