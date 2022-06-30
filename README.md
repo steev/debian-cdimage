@@ -73,7 +73,8 @@ Follow the steps below to launch Shell.efi for completing installation.
    disk plugged-in.  Press 'c' in Grub menu to get 'grub> '
    command-line prompt.
 
-2. Launch Shell.efi that resides in USB disk like below.
+2. Launch Shell.efi that resides in USB disk like below. The disk identifier may
+   vary between devices. For example, it is `(hd0,msdos1)` on Lenovo X13s.
 
 ```
 grub> chainloader (hd0,msdos2)/efi/shell/Shell.efi
@@ -82,7 +83,7 @@ grub> boot
 
 3. Identify the FS number of ESP partition on UFS by checking there
    are DtbLoader.efi and grubaa64.efi in `EFI\debian` folder.  For example,
-   it's `fs5:` on Lenovo Yoga C630 and `fs4:` on Flex 5G.
+   it's `fs5:` on Lenovo Yoga C630, `fs4:` on Flex 5G and `fs10:` on Lenovo X13s.
 
 ```
 Shell> map -r -b
@@ -203,29 +204,29 @@ $ sudo apt install bc bison flex libssl-dev rsync
 
 2. Check out kernel source
 ```
-$ git clone https://github.com/aarch64-laptops/linux.git
-$ cd linux
-$ git checkout -b laptops-5.13 origin/laptops-5.13
+$ git clone https://git.linaro.org/people/manivannan.sadhasivam/linux.git
+$ cd linux/
+$ git checkout -b laptops-5.19-rc1 origin/lenovo-x13s
 ```
 
 3. Build binary kernel deb package
 ```
-$ make distro_defconfig
+$ make laptop_defconfig
 $ make LOCALVERSION="-custom" -j8 bindeb-pkg
 ```
 After build completes, the following deb files will be found in parent folder.
-- linux-image-5.13.0-custom_5.13.0-custom-1_arm64.deb
-- linux-headers-5.13.0-custom_5.13.0-custom-1_arm64.deb
-- linux-libc-dev_5.13.0-custom-1_arm64.deb
+- linux-image-5.19.0-rc1-custom_5.19.0-rc1-custom-1_arm64.deb
+- linux-headers-5.19.0-rc1-custom_5.19.0-rc1-custom-1_arm64.deb
+- linux-libc-dev_5.19.0-rc1-custom-1_arm64.deb
 
 4. Install kernel package
 ```
-$ sudo dpkg -i linux-image-5.13.0-custom_5.13.0-custom-1_arm64.deb
+$ sudo dpkg -i linux-image-5.19.0-rc1-custom_5.19.0-rc1-custom-1_arm64.deb
 ```
 
 5. Upgrade DTB
 ```
-$ sudo python3 /usr/local/bin/install-dtbs.py /usr/lib/linux-image-5.13.0-custom /boot/efi/dtb
+$ sudo python3 /usr/local/bin/install-dtbs.py /usr/lib/linux-image-5.19.0-rc1-custom /boot/efi/dtb
 ```
 
 ## Misc tips
