@@ -78,6 +78,22 @@ The steps documented here are basically collected from debian-installer
 [WIKI](https://wiki.debian.org/DebianInstaller/Build) page and 
 [README](https://salsa.debian.org/installer-team/debian-installer/-/tree/master/build).
 
+* Add deb-src to sources.list for building the debian packages from source
+
+The sources.list should have below entries:
+
+```
+$ cat /etc/apt/sources.list
+deb http://deb.debian.org/debian bullseye main
+deb-src http://deb.debian.org/debian bullseye main
+deb http://security.debian.org/debian-security bullseye-security main
+deb-src http://security.debian.org/debian-security bullseye-security main
+deb http://deb.debian.org/debian bullseye-updates main
+deb-src http://deb.debian.org/debian bullseye-updates main
+
+$ sudo apt update
+```
+
 * Check out debian-installer source and install build dependencies.
 
 ```
