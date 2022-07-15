@@ -1,0 +1,31 @@
+--- tools/boot/bullseye/boot-arm64	2022-07-15 14:54:45.777693636 +0000
++++ tools/boot/bullseye/boot-arm64-modified	2022-07-15 14:53:32.756188294 +0000
+@@ -86,7 +86,7 @@
+ 
+     # Move GRUB files to the right place.
+     mkdir -p $CDDIR/EFI/boot
+-    mcopy -n -s -i boot$N/grub/efi.img '::efi' $CDDIR/EFI
++    mcopy -n -s -i boot$N/grub/efi.img '::/' $CDDIR/EFI
+     mkdir -p $CDDIR/boot/grub
+     mv boot$N/grub/* $CDDIR/boot/grub/
+     rmdir boot$N/grub
+@@ -95,8 +95,8 @@
+     # small as possible. We end up re-packing like this in case we're
+     # making a multi-arch image
+ 
+-    # First, work out how many blocks we need
+-    blocks=$(calculate_efi_image_size $CDDIR)
++    # Use a fixed block size of 100MiB
++    blocks=102400
+ 
+     # Now make a new image to contain the files
+     rm -f $CDDIR/boot/grub/efi.img
+@@ -104,7 +104,7 @@
+ 
+     # And copy them into place
+     mcopy -o -s -i "$CDDIR/boot/grub/efi.img" $CDDIR/EFI/* \
+-        "::efi"
++        "::/"
+ 
+     # Ugh - different code here depending on the version of xorriso we've got
+     if [ $XORRISO_VER -le 10202 ] ; then
