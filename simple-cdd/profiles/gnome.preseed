@@ -1,1 +1,1 @@
-d-i base-installer/kernel/image string linux-image-5.19.0-rc1-custom
+d-i base-installer/kernel/image string linux-image-6.0.0-rc3-custom
