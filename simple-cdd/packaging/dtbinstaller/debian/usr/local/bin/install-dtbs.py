@@ -47,7 +47,9 @@ dtbs = [
     # At least one c630 in the wild has 'INVALID' for the product name, so lets also try 'Family'
     Dtb('qcom/sdm850-lenovo-yoga-c630.dtb', 'LENOVO&Yoga C630-13Q50 Laptop'),  # Manufacturer&Family => 'HardwareID-11'
     # Lenovo Thinkpad X13s:
-    Dtb('qcom/sc8280xp-thinkpad.dtb',  'LENOVO&ThinkPad X13s Gen 1'),   # Manufacturer&ProductName => 'HardwareID-9'
+    Dtb('qcom/sc8280xp-lenovo-thinkpad-x13s.dtb',  'LENOVO&ThinkPad X13s Gen 1'),   # Manufacturer&ProductName => 'HardwareID-9'
+    # Qualcomm SC8280XP CRD:
+    Dtb('qcom/sc8280xp-crd.dtb',  'Qualcomm&SCP_MAKENA'),   # Manufacturer&ProductName => 'HardwareID-9'
 ]
 
 src = sys.argv[1]
