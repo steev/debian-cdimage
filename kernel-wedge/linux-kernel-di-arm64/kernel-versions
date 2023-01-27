@@ -1,2 +1,2 @@
 # arch     version    flavour    installedname   suffix    build-depends
-arm64      6.0.0-rc3 custom     -               -         linux-image-6.0.0-custom
+arm64      6.2.0-rc1 custom     -               -         linux-image-6.2.0-rc1-custom
