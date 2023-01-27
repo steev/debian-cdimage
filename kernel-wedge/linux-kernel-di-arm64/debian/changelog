@@ -1,5 +1,5 @@
-linux-kernel-di-arm64 (5.19.0-rc1-custom-1) sid; urgency=medium
+linux-kernel-di-arm64 (6.2.0-rc1-custom-1) sid; urgency=medium
 
   * Non-maintainer upload.
 
- -- Shawn Guo <shawn.guo@linaro.org>  Tue, 15 Dec 2020 01:51:49 +0000
+ -- Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org> Fri, 27 Dec 2022 12:12:00
