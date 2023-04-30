@@ -1,15 +1,13 @@
-gnome-core
-network-manager-gnome
-crda
+kali-desktop-gnome
 
 sudo
 vim
 
-linux-image-6.2.0-rc1-custom
+linux-image-6.3.0-custom
 grub-efi-arm64
 os-prober
 
-pd-mapper
+protection-domain-mapper
 qrtr
 rmtfs
 tqftpserv
@@ -18,7 +16,8 @@ fastrpc
 dtbinstaller
 dtbloader
 linaro-overlay-sid
+firmware-qcom-soc
 
-firmware-lenovo
+dislocker
 ntfs-3g
 python2
