@@ -1,5 +1,5 @@
-linux-kernel-di-arm64 (6.2.0-rc1-custom-1) sid; urgency=medium
+linux-kernel-di-arm64 (6.3.0-custom-1) kali-dev; urgency=medium
 
   * Non-maintainer upload.
 
- -- Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org> Fri, 27 Dec 2022 12:12:00
+ -- Steev Klimaszewski <steev@kali.org>  Sun, 30 Apr 2023 15:03:05 -0500
